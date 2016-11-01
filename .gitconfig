@@ -1,0 +1,52 @@
+# handy: git grep
+
+[gui]
+
+[user]
+	name = mynz
+	email = rollingteapot@gmail.com
+[core]
+	excludesfile = /Users/mynz/.gitignore
+
+[color]
+  status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	grep = auto
+
+[alias]
+	st = status
+	ci = commit -a
+	co = checkout
+	br = branch
+
+	# new short cut
+	wc = whatchanged
+	ls = log --stat
+
+	dc = diff --cached # workspacs vs index
+
+	unstage = reset HEAD --
+	last = log -1 HEAD
+[gui]
+	recentrepo = /Users/mynz/code/git
+
+
+[imap]
+	folder = "[Gmail]/Drafts"
+	host = imaps://imap.gmail.com
+	user = rollingteapot@gmail.com
+	;pass = p4ssw0rd
+	port = 993
+	sslverify = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+	user = mynz
+[push]
+	default = simple
