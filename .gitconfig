@@ -50,3 +50,7 @@
 	user = mynz
 [push]
 	default = simple
+[https]
+	proxy = http://proxy.hq.scei.sony.co.jp:8080
+[http]
+	proxy = http://proxy.hq.scei.sony.co.jp:8080

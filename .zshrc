@@ -37,7 +37,7 @@ export PATH=$HOME/bin:$PATH
 export PAGER=less
 export EDITOR=vim
 export RUBYOPT=rubygems
-export LANG=ja_JP.UTF-8
+#export LANG=ja_JP.UTF-8
 #export LANG=ja_JP.encJP
 export HGENCODING=utf-8
 
@@ -78,3 +78,5 @@ export GOPATH=$HOME/go
 export PATH=$HOME/go/bin:$PATH
 
 
+export HTTP_PROXY=http://proxy.hq.scei.sony.co.jp:8080
+export HTTPS_PROXY=http://proxy.hq.scei.sony.co.jp:8080
