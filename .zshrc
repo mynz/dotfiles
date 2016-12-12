@@ -71,11 +71,8 @@ _cache_hosts=(localhost $HOST bsd air mynz.dyndns.org gbc.sakura.ne.jp
 
 
 # golang
-#export GOROOT=/opt/local/go 
-# export GOPATH=$HOME/go/third-party:$HOME/go/my-project
-# export PATH=$HOME/go/third-party/bin:$HOME/go/my-project/bin:$PATH # bin
-#export GOPATH=$HOME/go
-#export PATH=$HOME/go/bin:$PATH
+export GOPATH=$HOME/go
+export PATH=$HOME/go/bin:$PATH
 
 
 export HTTP_PROXY=http://proxy.hq.scei.sony.co.jp:8080
