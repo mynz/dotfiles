@@ -59,6 +59,13 @@ alias hg='hg --encoding=utf-8'
 
 alias h='history'
 
+# http://qiita.com/vintersnow/items/08852df841e8d5faa7c2
+function find_cd() {
+	cd "$(find . -type d | peco)"
+}
+alias fc="find_cd"
+
+
 # enable c^s
 stty stop undef
 
