@@ -11,7 +11,15 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
 
 call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/vimproc.vim', {'build': 'gmake'})
+
+"call dein#add('Shougo/vimproc.vim', {'build': 'gmake'})
+call dein#add('Shougo/vimproc.vim', {
+			\ 'build': {
+			\     'mac': 'make -f make_mac.mak',
+			\     'linux': 'make',
+			\     'unix': 'gmake',
+			\    },
+			\ })
 
 call dein#add('Shougo/unite.vim')
 
@@ -28,7 +36,7 @@ call dein#add('matchit.zip')
 call dein#add('Align')
 call dein#add('a.vim')
 
-call dein#add('tpope/vim-fugitivea')
+call dein#add('tpope/vim-fugitive')
 call dein#add('fatih/vim-go')
 
 
