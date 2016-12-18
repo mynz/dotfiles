@@ -1,5 +1,4 @@
-#!/usr/local/bin/bash
-
+#!/usr/bin/env bash
 
 # list dotfiles apart from "." and ".."
 for f in .??*
