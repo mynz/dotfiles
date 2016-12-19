@@ -81,7 +81,10 @@ _cache_hosts=(localhost $HOST bsd air mynz.dyndns.org gbc.sakura.ne.jp
 export GOPATH=$HOME/go
 export PATH=$HOME/go/bin:$PATH
 
+if [ $(hostname) = "fbsd11" ]; then
+	export SCE_PROXY=http://proxy.hq.scei.sony.co.jp:8080
+fi
 if [ ${SCE_PROXY} ]; then
-	export HTTP_PROXY=http://proxy.hq.scei.sony.co.jp:8080
-	export HTTPS_PROXY=http://proxy.hq.scei.sony.co.jp:8080
+	export HTTP_PROXY=$SCE_PROXY
+	export HTTPS_PROXY=$SCE_PROXY
 fi

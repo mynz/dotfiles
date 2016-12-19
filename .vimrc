@@ -66,6 +66,9 @@ set termencoding=utf8
 
 let mapleader=","
 
+inoremap <silent> <C-f> <Left>
+inoremap <silent> <C-b> <Right>
+
 nnoremap <Space>. :<C-u>edit $MYVIMRC<Enter>
 nnoremap <Leader>fm :Unite file_mru -start-insert<CR>
 nnoremap <Leader>fj :Unite file_rec -start-insert<CR>
