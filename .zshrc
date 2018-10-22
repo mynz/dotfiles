@@ -1,11 +1,26 @@
 # Lines configured by zsh-newuser-install
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
 #PROMPT="%U$USER@%m%%%u "
 PROMPT="[%U$USER@%m%%%u] %(!,#,$)"
-RPROMPT="[%~]"
+
+#RPROMPT="[%~]"
+
+# for git and other VCS
+RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+#RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+RPROMPT='${vcs_info_msg_0_}'$RPROMPT
 
 
 setopt autocd
@@ -30,10 +45,14 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' list-colors 'di=32' 'ln=35' 'so=34' 'ex=31' 'bd=46;34' 'cd=43;34'
 
+# ignore case unless giving Capital case.
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+
 # color-ed ls command.
 export LSCOLORS=cxfxexdxbxegedabagacad
 
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.roswell/bin:$PATH
 export PAGER=less
 export EDITOR=vim
 export RUBYOPT=rubygems
@@ -76,10 +95,12 @@ _cache_hosts=(localhost $HOST bsd air mynz.dyndns.org gbc.sakura.ne.jp
 # OPAM configuration
 . /Users/mynz/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
-
 # golang
 export GOPATH=$HOME/go
 export PATH=$HOME/go/bin:$PATH
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
 
 if [ $(hostname) = "fbsd11" ]; then
 	export SCE_PROXY=http://proxy.hq.scei.sony.co.jp:8080
