@@ -40,9 +40,11 @@ call dein#add('fatih/vim-go')
 
 call dein#add('rust-lang/rust.vim')
 call dein#add('racer-rust/vim-racer')
-"call dein#add('rhysd/rust-doc.vim')
 
+"call dein#add('rhysd/rust-doc.vim')
 "call dein#add('kovisoft/slimv')
+
+call dein#add('elmcast/elm-vim')
 
 
 call dein#end()
@@ -78,6 +80,7 @@ inoremap <silent> <C-b> <Left>
 nnoremap <Space>. :<C-u>edit $MYVIMRC<Enter>
 nnoremap <Leader>fm :Unite file_mru -start-insert<CR>
 nnoremap <Leader>fj :Unite file_rec -start-insert<CR>
+nnoremap <Leader>ub :Unite buffer -start-insert<CR>
 nnoremap <Leader>d :call append(line(".")-1, ["----", strftime("%Y%m%d", localtime())])<cr>
 
 nmap <c-n> :cn<cr>
@@ -109,5 +112,6 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
+au FileType rust nmap <leader>t :Cargo test<CR>
 
 let g:racer_experimental_completer = 1

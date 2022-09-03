@@ -30,6 +30,7 @@ setopt list_packed
 setopt hist_ignore_dups
 setopt share_history
 setopt pushd_ignore_dups
+setopt IGNORE_EOF
 
 bindkey -e
 
@@ -94,6 +95,10 @@ _cache_hosts=(localhost $HOST bsd air mynz.dyndns.org gbc.sakura.ne.jp
 
 # OPAM configuration
 . /Users/mynz/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# for Python 3.9
+export PATH=$HOME/Library/Python/3.9/bin:$PATH
+export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
 
 # golang
 export GOPATH=$HOME/go
